@@ -28,9 +28,9 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-android {
-  defaultConfig {
+//android {
+//  defaultConfig {
      // ...
-     ndkVersion = "21.1.6352462"
-  }
-}
+//     ndkVersion = "21.1.6352462"
+//  }
+//}
