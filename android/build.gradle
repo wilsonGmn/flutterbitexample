@@ -24,6 +24,19 @@ subprojects {
     project.evaluationDependsOn(':app')
 }
 
+
+signingConfigs {
+
+    // TODO: Set the values with Btirise environment variables
+    release {
+        keyAlias System.getenv("BITRISEIO_ANDROID_KEYSTORE_ALIAS")
+        keyPassword System.getenv("BITRISEIO_ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD")
+        storeFile file(System.getenv("HOME") + "/keystores/prod.jks")
+        storePassword System.getenv("BITRISEIO_ANDROID_KEYSTORE_PASSWORD")
+    }
+}
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
